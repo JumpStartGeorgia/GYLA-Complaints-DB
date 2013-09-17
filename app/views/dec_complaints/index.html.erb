@@ -1,0 +1,21 @@
+<h1>Listing dec_complaints</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dec_complaints.each do |dec_complaint| %>
+  <tr>
+    <td><%= link_to 'Show', dec_complaint %></td>
+    <td><%= link_to 'Edit', edit_dec_complaint_path(dec_complaint) %></td>
+    <td><%= link_to 'Destroy', dec_complaint, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dec complaint', new_dec_complaint_path %>

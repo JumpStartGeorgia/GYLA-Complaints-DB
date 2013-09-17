@@ -1,8 +1,13 @@
 BootstrapStarter::Application.routes.draw do
+
 	#--------------------------------
 	# all resources should be within the scope block below
 	#--------------------------------
 	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+
+    resources :pec_complaints
+    resources :dec_complaints
+    resources :cec_complaints
 
 		match '/admin', :to => 'admin#index', :as => :admin, :via => :get
 		devise_for :users, :path_names => {:sign_in => 'login', :sign_out => 'logout'}

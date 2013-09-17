@@ -1,0 +1,21 @@
+<h1>Listing cec_complaints</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cec_complaints.each do |cec_complaint| %>
+  <tr>
+    <td><%= link_to 'Show', cec_complaint %></td>
+    <td><%= link_to 'Edit', edit_cec_complaint_path(cec_complaint) %></td>
+    <td><%= link_to 'Destroy', cec_complaint, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cec complaint', new_cec_complaint_path %>

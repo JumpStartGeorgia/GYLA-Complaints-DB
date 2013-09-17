@@ -1,0 +1,2 @@
+module CecComplaintsHelper
+end
