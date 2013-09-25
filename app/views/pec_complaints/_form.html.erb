@@ -1,8 +1,115 @@
 <%= semantic_form_for @pec_complaint do |f| %>
   <%= f.inputs do %>
+
+    <%= f.input :pec_observer, :label => t('forms.pec.observer') %>
+
+    <%= f.input :pec_observer_address, :label => t('forms.pec.observer_address') %>
+
+    <%= f.input :pec_observer_phone, :label => t('forms.pec.observer_phone') %>
+
+    <%= f.input :pec_district_name, :label => t('forms.pec.district_name') %>
+
+    <%= f.input :pec_precinct_number, :label => t('forms.pec.precinct_number') %>
+
+    <%= f.input :pec_violation_period, :label => t('forms.pec.violation_period') %>
+
+    <%= f.input :pec_violation_type, :label => t('forms.pec.violation_type') %>
+
+    <%= f.input :pec_violated_at, :label => t('forms.pec.violated_at') %>
+
+    <%= f.input :pec_violation_desc, :label => t('forms.pec.violation_desc') %>
+
+    <%= f.input :pec_witness_info, :label => t('forms.pec.witness_info') %>
+
+    <%= f.input :pec_violator_info, :label => t('forms.pec.violator_info') %>
+
+    <%= f.input :pec_additional_info, :label => t('forms.pec.additional_info') %>
+
+    <%= f.input :pec_author, :label => t('forms.pec.author') %>
+
+    <%= f.input :pec_author_phone, :label => t('forms.pec.author_phone') %>
+
+    <%= f.input :pec_written_at, :label => t('forms.pec.written_at') %>
+
+    <%= f.input :pec_request, :label => t('forms.pec.request') %>
+
+    <%= f.input :pec_answered_at, :label => t('forms.pec.answered_at') %>
+
+    <%= f.input :pec_result, :label => t('forms.pec.result') %>
+
+    <%= f.input :pec_appeal, :label => t('forms.pec.appeal') %>
+
+    <%= f.input :pec_decision_basis, :label => t('forms.pec.decision_basis') %>
+
+
+
+
+    <%= f.input :dec_author, :label => t('forms.dec.author') %>
+
+    <%= f.input :dec_author_phone, :label => t('forms.dec.author_phone') %>
+
+    <%= f.input :dec_written_at, :label => t('forms.dec.written_at') %>
+
+    <%= f.input :dec_request, :label => t('forms.dec.request') %>
+
+    <%= f.input :dec_answered_at, :label => t('forms.dec.answered_at') %>
+
+    <%= f.input :dec_result, :label => t('forms.dec.result') %>
+
+    <%= f.input :dec_appeal, :label => t('forms.dec.appeal') %>
+
+    <%= f.input :dec_decision_basis, :label => t('forms.dec.decision_basis') %>
+
+    <%= f.input :dec_additional_info, :label => t('forms.dec.additional_info') %>
+
+
+
+
+    <%= f.input :court_author, :label => t('forms.court.author') %>
+
+    <%= f.input :court_author_phone, :label => t('forms.court.author_phone') %>
+
+    <%= f.input :court_name, :label => t('forms.court.name') %>
+
+    <%= f.input :court_written_at, :label => t('forms.court.written_at') %>
+
+    <%= f.input :court_request, :label => t('forms.court.request') %>
+
+    <%= f.input :court_answered_at, :label => t('forms.court.answered_at') %>
+
+    <%= f.input :court_result, :label => t('forms.court.result') %>
+
+    <%= f.input :court_appeal, :label => t('forms.court.appeal') %>
+
+    <%= f.input :court_decision_basis, :label => t('forms.court.decision_basis') %>
+
+    <%= f.input :court_additional_info, :label => t('forms.court.additional_info') %>
+
+
+
+
+    <%= f.input :appellate_author, :label => t('forms.appellate.author') %>
+
+    <%= f.input :appellate_author_phone, :label => t('forms.appellate.author_phone') %>
+
+    <%= f.input :appellate_name, :label => t('forms.appellate.name') %>
+
+    <%= f.input :appellate_written_at, :label => t('forms.appellate.written_at') %>
+
+    <%= f.input :appellate_request, :label => t('forms.appellate.request') %>
+
+    <%= f.input :appellate_answered_at, :label => t('forms.appellate.answered_at') %>
+
+    <%= f.input :appellate_result, :label => t('forms.appellate.result') %>
+
+    <%= f.input :appellate_decision_basis, :label => t('forms.appellate.decision_basis') %>
+
+    <%= f.input :appellate_additional_info, :label => t('forms.appellate.additional_info') %>
+
+
   <% end %>
 
   <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
+    <%= f.action :submit, :button_html => {:class => "btn btn-success"} %>
   <% end %>
 <% end %>

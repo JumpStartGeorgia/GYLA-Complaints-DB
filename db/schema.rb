@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130917140538) do
+ActiveRecord::Schema.define(:version => 20130925101231) do
 
   create_table "cec_complaints", :force => true do |t|
     t.datetime "created_at"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20130917140538) do
     t.datetime "cec_answered_at"
     t.string   "cec_result"
     t.boolean  "cec_appeal"
-    t.text     "cec_desicion_basis"
+    t.text     "cec_decision_basis"
     t.string   "appellate_author"
     t.string   "appellate_author_phone"
     t.string   "appellate_name"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20130917140538) do
     t.string   "appellate_request"
     t.datetime "appellate_answered_at"
     t.string   "appellate_result"
-    t.text     "appellate_desicion_basis"
+    t.text     "appellate_decision_basis"
     t.text     "appellate_additional_info"
   end
 
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20130917140538) do
     t.datetime "dec_answered_at"
     t.string   "dec_result"
     t.boolean  "dec_appeal"
-    t.text     "dec_desicion_basis"
+    t.text     "dec_decision_basis"
     t.string   "cec_author"
     t.string   "cec_author_phone"
     t.datetime "cec_written_at"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(:version => 20130917140538) do
     t.datetime "cec_answered_at"
     t.string   "cec_result"
     t.boolean  "cec_appeal"
-    t.text     "cec_desicion_basis"
+    t.text     "cec_decision_basis"
     t.text     "cec_additional_info"
     t.string   "appellate_author"
     t.string   "appellate_author_phone"
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(:version => 20130917140538) do
     t.string   "appellate_request"
     t.datetime "appellate_answered_at"
     t.string   "appellate_result"
-    t.text     "appellate_desicion_basis"
+    t.text     "appellate_decision_basis"
     t.text     "appellate_additional_info"
   end
 
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(:version => 20130917140538) do
     t.datetime "dec_answered_at"
     t.string   "dec_result"
     t.boolean  "dec_appeal"
-    t.text     "dec_desicion_basis"
+    t.text     "dec_decision_basis"
     t.text     "dec_additional_info"
     t.string   "court_author"
     t.string   "court_author_phone"
@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(:version => 20130917140538) do
     t.datetime "court_answered_at"
     t.string   "court_result"
     t.boolean  "court_appeal"
-    t.text     "court_desicion_basis"
+    t.text     "court_decision_basis"
     t.text     "court_additional_info"
     t.string   "appellate_author"
     t.string   "appellate_author_phone"
@@ -134,7 +134,7 @@ ActiveRecord::Schema.define(:version => 20130917140538) do
     t.string   "appellate_request"
     t.datetime "appellate_answered_at"
     t.string   "appellate_result"
-    t.text     "appellate_desicion_basis"
+    t.text     "appellate_decision_basis"
     t.text     "appellate_additional_info"
   end
 

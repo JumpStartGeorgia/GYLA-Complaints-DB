@@ -90,3 +90,10 @@ ka:
         title: ახალი მომხმარებელი
       show:
         title: მომხმარებლის დეტალები
+  forms:
+    pec:
+      observer: დამკვირვებლის სახელი
+    dec:
+      test: test
+    cec:
+      test: test
