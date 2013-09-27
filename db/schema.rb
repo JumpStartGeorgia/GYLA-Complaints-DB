@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130925101231) do
+ActiveRecord::Schema.define(:version => 20130927112943) do
 
   create_table "cec_complaints", :force => true do |t|
     t.datetime "created_at"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20130925101231) do
     t.string   "appellate_result"
     t.text     "appellate_decision_basis"
     t.text     "appellate_additional_info"
+    t.integer  "election_id"
   end
 
   create_table "dec_complaints", :force => true do |t|
@@ -83,6 +84,23 @@ ActiveRecord::Schema.define(:version => 20130925101231) do
     t.string   "appellate_result"
     t.text     "appellate_decision_basis"
     t.text     "appellate_additional_info"
+    t.integer  "election_id"
+  end
+
+  create_table "elections", :force => true do |t|
+    t.string   "name"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pec_complaint_files", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
   end
 
   create_table "pec_complaints", :force => true do |t|
@@ -136,6 +154,7 @@ ActiveRecord::Schema.define(:version => 20130925101231) do
     t.string   "appellate_result"
     t.text     "appellate_decision_basis"
     t.text     "appellate_additional_info"
+    t.integer  "election_id"
   end
 
   create_table "users", :force => true do |t|
