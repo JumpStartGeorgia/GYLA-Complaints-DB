@@ -57,6 +57,7 @@ class PecComplaintsController < ApplicationController
   # PUT /pec_complaints/1.json
   def update
     @pec_complaint = PecComplaint.find(params[:id])
+   #abort params[:pec_complaint][:pec_complaint_files_attributes]['0'][:id].inspect
 
     respond_to do |format|
       if @pec_complaint.update_attributes(params[:pec_complaint])

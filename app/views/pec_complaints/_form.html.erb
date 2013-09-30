@@ -3,20 +3,6 @@
 
   <br />
 
-  <%= f.fields_for :pec_complaint_files do |file_form| %>
-    <% if !file_form.object.nil? && !file_form.object.file_file_name.nil? %>
-      <%= link_to file_form.object.file_file_name, file_form.object.file.url, :target => "_blank" %>
-    <% else %>
-      <%= file_form.file_field :file %>
-    <% end %>
-    <%= file_form.hidden_field :field_type, :value => :proof %>
-    <%= file_form.link_to_remove "Remove this attachment" %>
-  <% end %>
-  <p><%= f.link_to_add "Add an attachment", :pec_complaint_files %></p>
-
-  <br />
-
-
   <%= f.inputs do %>
 
     <%= f.input :election_id, :as => :select, :collection => Election.order('date DESC'), :label => t('forms.election'), :include_blank => false %>
@@ -46,6 +32,19 @@
     <%= f.input :pec_violator_info, :label => t('forms.pec.violator_info') %>
 
     <%= f.input :pec_additional_info, :label => t('forms.pec.additional_info') %>
+
+    <label class="label"><%= t('forms.pec.proofs') %></label>
+    <%= f.fields_for :pec_complaint_files do |file_form| %>
+      <% if !file_form.object.nil? && !file_form.object.file_file_name.nil? && file_form.object.field_type == 'proof' %>
+        <%= link_to file_form.object.file_file_name, file_form.object.file.url, :target => "_blank" %>
+      <% else %>
+        <%= file_form.file_field :file %>
+      <% end %>
+      <%= file_form.hidden_field :field_type, :value => :proof %>
+      <%= file_form.link_to_remove "Remove this attachment" %>
+    <% end %>
+    <p><%= f.link_to_add "Add an attachment", :pec_complaint_files, :data => {:field_type => :proof} %></p>
+    <br />
 
     <%= f.input :pec_author, :label => t('forms.pec.author') %>
 
@@ -84,6 +83,19 @@
 
     <%= f.input :dec_additional_info, :label => t('forms.dec.additional_info') %>
 
+    <label class="label"><%= t('forms.pec.copies') %></label>
+    <%= f.fields_for :pec_complaint_files do |file_form| %>
+      <% if !file_form.object.nil? && !file_form.object.file_file_name.nil? && file_form.object.field_type == 'dec_copy'  %>
+        <%= link_to file_form.object.file_file_name, file_form.object.file.url, :target => "_blank" %>
+      <% else %>
+        <%= file_form.file_field :file %>
+      <% end %>
+      <%= file_form.hidden_field :field_type, :value => :dec_copy %>
+      <%= file_form.link_to_remove "Remove this attachment" %>
+    <% end %>
+    <p><%= f.link_to_add "Add an attachment", :pec_complaint_files, :data => {:field_type => :dec_copy} %></p>
+    <br />
+
 
 
 
@@ -107,6 +119,19 @@
 
     <%= f.input :court_additional_info, :label => t('forms.court.additional_info') %>
 
+    <label class="label"><%= t('forms.pec.copies') %></label>
+    <%= f.fields_for :pec_complaint_files do |file_form| %>
+      <% if !file_form.object.nil? && !file_form.object.file_file_name.nil? && file_form.object.field_type == 'court_copy'  %>
+        <%= link_to file_form.object.file_file_name, file_form.object.file.url, :target => "_blank" %>
+      <% else %>
+        <%= file_form.file_field :file %>
+      <% end %>
+      <%= file_form.hidden_field :field_type, :value => :court_copy %>
+      <%= file_form.link_to_remove "Remove this attachment" %>
+    <% end %>
+    <p><%= f.link_to_add "Add an attachment", :pec_complaint_files, :data => {:field_type => :court_copy} %></p>
+    <br />
+
 
 
 
@@ -127,6 +152,19 @@
     <%= f.input :appellate_decision_basis, :label => t('forms.appellate.decision_basis') %>
 
     <%= f.input :appellate_additional_info, :label => t('forms.appellate.additional_info') %>
+
+    <label class="label"><%= t('forms.pec.copies') %></label>
+    <%= f.fields_for :pec_complaint_files do |file_form| %>
+      <% if !file_form.object.nil? && !file_form.object.file_file_name.nil? && file_form.object.field_type == 'appellate_copy'  %>
+        <%= link_to file_form.object.file_file_name, file_form.object.file.url, :target => "_blank" %>
+      <% else %>
+        <%= file_form.file_field :file %>
+      <% end %>
+      <%= file_form.hidden_field :field_type, :value => :appellate_copy %>
+      <%= file_form.link_to_remove "Remove this attachment" %>
+    <% end %>
+    <p><%= f.link_to_add "Add an attachment", :pec_complaint_files, :data => {:field_type => :appellate_copy} %></p>
+    <br />
 
 
   <% end %>

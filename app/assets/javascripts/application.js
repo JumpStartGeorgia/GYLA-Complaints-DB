@@ -27,7 +27,4 @@ $(document).ready(function(){
 		.off('click.dropdown touchstart.dropdown.data-api', '.dropdown')
 		.on('click.dropdown touchstart.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() });
 
-
-  //$('.datetimepicker').datepicker();
-
 });
