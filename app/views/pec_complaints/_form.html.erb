@@ -1,19 +1,25 @@
-<%= semantic_form_for @pec_complaint, :html => { :multipart => true } do |f| %>
+<%= semantic_nested_form_for @pec_complaint, :html => { :multipart => true } do |f| %>
 
 
-  <% f.fields_for :pec_complaint_files do |builder| %>
-    <%= builder.label :photo, "Image File" %>
-    <%= builder.file_field :file %>
+  <br />
+
+  <%= f.fields_for :pec_complaint_files do |file_form| %>
+    <% if !file_form.object.nil? && !file_form.object.file_file_name.nil? %>
+      <%= link_to file_form.object.file_file_name, file_form.object.file.url, :target => "_blank" %>
+    <% else %>
+      <%= file_form.file_field :file %>
+    <% end %>
+    <%= file_form.hidden_field :field_type, :value => :proof %>
+    <%= file_form.link_to_remove "Remove this attachment" %>
   <% end %>
+  <p><%= f.link_to_add "Add an attachment", :pec_complaint_files %></p>
+
+  <br />
 
 
   <%= f.inputs do %>
 
-    <%= f.input :election_id, :as => :select, :collection => Election.order('date DESC'), :label => t('forms.election') %>
-
-
-    <%= f.input :file, :as => :file, :label => t('forms.election') %>
-    <%#= f.link_to_add t(".add_file"), :activity_images, :class => "btn btn-mini btn-primary" %>
+    <%= f.input :election_id, :as => :select, :collection => Election.order('date DESC'), :label => t('forms.election'), :include_blank => false %>
 
 
     <%= f.input :pec_observer, :label => t('forms.pec.observer') %>
@@ -30,6 +36,7 @@
 
     <%= f.input :pec_violation_type, :label => t('forms.pec.violation_type') %>
 
+    <%#= f.input :pec_violated_at, :as => :string, :label => t('forms.pec.violated_at'), :input_html => {:class => 'datetimepicker'} %>
     <%= f.input :pec_violated_at, :label => t('forms.pec.violated_at') %>
 
     <%= f.input :pec_violation_desc, :label => t('forms.pec.violation_desc') %>

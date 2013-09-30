@@ -13,6 +13,7 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require vendor
+//= require jquery_nested_form
 //= require_tree .
 
 $(document).ready(function(){
@@ -25,5 +26,8 @@ $(document).ready(function(){
 	$('body')
 		.off('click.dropdown touchstart.dropdown.data-api', '.dropdown')
 		.on('click.dropdown touchstart.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() });
+
+
+  //$('.datetimepicker').datepicker();
 
 });
