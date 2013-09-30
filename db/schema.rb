@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130927112943) do
+ActiveRecord::Schema.define(:version => 20130927190006) do
+
+  create_table "cec_complaint_files", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.integer  "cec_complaint_id"
+    t.string   "field_type"
+  end
 
   create_table "cec_complaints", :force => true do |t|
     t.datetime "created_at"
@@ -43,6 +54,17 @@ ActiveRecord::Schema.define(:version => 20130927112943) do
     t.text     "appellate_decision_basis"
     t.text     "appellate_additional_info"
     t.integer  "election_id"
+  end
+
+  create_table "dec_complaint_files", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.integer  "dec_complaint_id"
+    t.string   "field_type"
   end
 
   create_table "dec_complaints", :force => true do |t|
@@ -101,6 +123,8 @@ ActiveRecord::Schema.define(:version => 20130927112943) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+    t.integer  "pec_complaint_id"
+    t.string   "field_type"
   end
 
   create_table "pec_complaints", :force => true do |t|

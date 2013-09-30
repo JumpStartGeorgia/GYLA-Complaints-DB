@@ -1,9 +1,20 @@
 <%= semantic_form_for @pec_complaint, :html => { :multipart => true } do |f| %>
+
+
+  <% f.fields_for :pec_complaint_files do |builder| %>
+    <%= builder.label :photo, "Image File" %>
+    <%= builder.file_field :file %>
+  <% end %>
+
+
   <%= f.inputs do %>
 
     <%= f.input :election_id, :as => :select, :collection => Election.order('date DESC'), :label => t('forms.election') %>
 
+
     <%= f.input :file, :as => :file, :label => t('forms.election') %>
+    <%#= f.link_to_add t(".add_file"), :activity_images, :class => "btn btn-mini btn-primary" %>
+
 
     <%= f.input :pec_observer, :label => t('forms.pec.observer') %>
 
