@@ -12,4 +12,8 @@ class PecComplaint < ActiveRecord::Base
     self.pec_complaint_files
   end
 
+  def filter_files(field_type)
+    self.files.where(:field_type => field_type)
+  end
+
 end
